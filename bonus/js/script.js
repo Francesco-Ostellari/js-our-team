@@ -55,3 +55,32 @@ function printCards(arrayList, container) {
 const container = document.querySelector('.team-container');
 printCards(team, container);
 
+const inputName = document.getElementById('name');
+const inputRole = document.getElementById('role');
+const inputImg = document.getElementById('image');
+const button = document.getElementById('addMemberButton');
+
+button.addEventListener('click', function () {
+
+  //prendiamo dati inseriti dall'utente
+  const name = inputName.value;
+  const role = inputRole.value;
+  const nameImg = inputImg.value;
+
+  if (name.length > 0 && role.length > 0 && nameImg.length > 0) {
+    //se ha inserito effettivamente qualcosa
+    const obj = {
+      name: name,
+      role: role,
+      nameImg: nameImg
+    };
+    //pusho object nuovo
+    team.push(obj);
+
+    //aggiungo la card nel DOM
+    printCards(team, container);
+  } else {
+    console.log('non hai inserito dei dati');
+  }
+});
+
