@@ -57,7 +57,7 @@ printCards(team, container);
 
 const inputName = document.getElementById('name');
 const inputRole = document.getElementById('role');
-const inputImg = document.getElementById('image');
+const inputImage = document.getElementById('image');
 const button = document.getElementById('addMemberButton');
 
 button.addEventListener('click', function () {
@@ -65,14 +65,14 @@ button.addEventListener('click', function () {
   //prendiamo dati inseriti dall'utente
   const name = inputName.value;
   const role = inputRole.value;
-  const nameImg = inputImg.value;
+  const image = inputImage.value;
 
-  if (name.length > 0 && role.length > 0 && nameImg.length > 0) {
+  if (name.length > 0 && role.length > 0 && image.length > 0) {
     //se ha inserito effettivamente qualcosa
     const obj = {
       name: name,
       role: role,
-      nameImg: nameImg
+      image: image
     };
     //pusho object nuovo
     team.push(obj);
